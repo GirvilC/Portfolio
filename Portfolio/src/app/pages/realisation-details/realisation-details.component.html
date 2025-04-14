@@ -1,0 +1,64 @@
+<h2>{{ realisation?.titre }}</h2>
+
+<section>
+    <h3>Introduction</h3>
+    <p>{{ realisation?.introduction }}</p>
+</section>
+
+<section>
+    <h3>Objectif</h3>
+    <p>{{ realisation?.objectif }}</p>
+</section>
+
+<section>
+    <h3>Contexte Humain</h3>
+    <p>{{ realisation?.cHumain }}</p>
+</section>
+
+<section>
+    <h3>Contexte Technique</h3>
+    <p>{{ realisation?.cTechnique }}</p>
+</section>
+
+<section>
+    <h3>Enjeux et Risques</h3>
+    <p>{{ realisation?.enjeu }}</p>
+</section>
+
+<section>
+    <h3>Organisation</h3>
+    <p>{{ realisation?.organisation }}</p>
+</section>
+
+<section>
+    <h3>Réalisation</h3>
+    <p>{{ realisation?.realisation }}</p>
+</section>
+
+<section>
+    <h3>Fin du projet</h3>
+    <p>{{ realisation?.fin }}</p>
+</section>
+
+<section>
+    <h3>Ce que je retiens</h3>
+    <p>{{ realisation?.retiens }}</p>
+</section>
+
+<section *ngIf="realisation && realisation?.liensVersCompetences?.length">
+  <h3>Compétences associées</h3>
+  <div class="liens">
+    <a *ngFor="let id of realisation.liensVersCompetences" [routerLink]="['/competence', id]">
+      {{ id | titlecase }}
+    </a>
+  </div>
+</section>
+
+<section *ngIf="realisation && realisation?.liensVersRealisations?.length">
+  <h3>Réalisations associées</h3>
+  <div class="liens">
+    <a *ngFor="let id of realisation.liensVersRealisations" [routerLink]="['/realisation', id]">
+      {{ id | titlecase }}
+    </a>
+  </div>
+</section>

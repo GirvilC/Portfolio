@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>{{competence.titre}}</h1>
+
+    <section>
+        <h2>Définition</h2>
+        <p>{{competence.definition}}</p>
+    </section>
+
+    <section>
+        <h2>Élément de preuve</h2>
+        <p>{{competence.elementDePreuve}}</p>
+    </section>
+
+    <section>
+        <h2>Autocritique</h2>
+        <p>{{competence.autocritique}}</p>
+    </section>
+
+    <section>
+        <h2>Futur évolution</h2>
+        <p>{{competence.evolution}}</p>
+    </section>
+
+    <section *ngIf="competence.liensVersRealisations.length">
+        <h3>Réalisation liées</h3>
+        <div class="liens">
+            <a *ngFor="let id of competence.liensVersRealisations" [routerLink]="['/realisation', id]" class="btn-liens">Voir {{ id | titlecase }}</a>
+        </div>
+    </section>
+
+    <section *ngIf="competence.liensVersCompetences.length">
+        <h3>Compétences liées</h3>
+        <div class="liens">
+            <a *ngFor="let id of competence.liensVersCompetences" [routerLink]="['/competence', id]" class="btn-liens">Voir {{ getTitreCompetence(id) }}</a>
+        </div>
+    </section>
+</div>

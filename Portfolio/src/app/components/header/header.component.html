@@ -5,33 +5,33 @@
   
     <button mat-button>Mon Parcours</button>
   
-    <button mat-button [matMenuTriggerFor]="menu2">Compétences</button>
-    <mat-menu #menu2="matMenu">
+    <button mat-button [matMenuTriggerFor]="menuCompetence">Compétences</button>
+    <mat-menu #menuCompetence="matMenu">
         <div style="padding: 8px 16px; font-weight: bold; font-size: 0.9rem;">
             Compétences techniques
         </div>
-        <button mat-menu-item>Angular</button>
-        <button mat-menu-item>Benchmarking</button>
-        <button mat-menu-item>Javascript</button>
-        <button mat-menu-item>NodeJS</button>
-        <button mat-menu-item>Python</button>
-        <button mat-menu-item>SQL</button>
+        <button mat-menu-item [routerLink]="['/competence', 'angular']">Angular</button>
+        <button mat-menu-item [routerLink]="['/competence', 'benchmarking']">Benchmarking</button>
+        <button mat-menu-item [routerLink]="['/competence', 'javascript']">Javascript</button>
+        <button mat-menu-item [routerLink]="['/competence', 'nodejs']">NodeJS</button>
+        <button mat-menu-item [routerLink]="['/competence', 'python']">Python</button>
+        <button mat-menu-item [routerLink]="['/competence', 'sql']">SQL</button>
         <mat-divider></mat-divider>
         <div style="padding: 8px 16px; font-weight: bold; font-size: 0.9rem;">
             Compétences humaines
         </div>
-        <button mat-menu-item>Adaptation besoin client</button>
-        <button mat-menu-item>Agile</button>
-        <button mat-menu-item>Communication</button>
-        <button mat-menu-item>Gestion de projet</button>
+        <button mat-menu-item [routerLink]="['/competence', 'adaptation']">Adaptation besoin client</button>
+        <button mat-menu-item [routerLink]="['/competence', 'agile']">Agile</button>
+        <button mat-menu-item [routerLink]="['/competence', 'communication']">Communication</button>
+        <button mat-menu-item [routerLink]="['/competence', 'gestion']">Gestion de projet</button>
     </mat-menu>
   
     <button mat-button [matMenuTriggerFor]="menu3">Réalisation</button>
     <mat-menu #menu3="matMenu">
-      <button mat-menu-item>ArchWeb</button>
-      <button mat-menu-item>CDS ADS</button>
-      <button mat-menu-item>CDS AMT</button>
-      <button mat-menu-item>PLANT</button>
-      <button mat-menu-item>Qapi</button>
+      <button mat-menu-item [routerLink]="['/realisation', 'archweb']">ArchWeb</button>
+      <button mat-menu-item [routerLink]="['/realisation', 'ads']">CDS ADS</button>
+      <button mat-menu-item [routerLink]="['/realisation', 'amt']">CDS AMT</button>
+      <button mat-menu-item [routerLink]="['/realisation', 'plant']">PLANT</button>
+      <button mat-menu-item [routerLink]="['/realisation', 'qapi']">Qapi</button>
     </mat-menu>
 </mat-toolbar>
