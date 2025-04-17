@@ -1,0 +1,12 @@
+.presentation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+  
+mat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+}

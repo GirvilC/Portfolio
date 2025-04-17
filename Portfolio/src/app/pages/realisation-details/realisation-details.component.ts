@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Realisation, REALISATIONS } from '../../data/realisation';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-realisation-details',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatCardModule],
   templateUrl: './realisation-details.component.html',
   styleUrl: './realisation-details.component.scss'
 })

@@ -1,64 +1,88 @@
-<h2>{{ realisation?.titre }}</h2>
+<div class="container">
+  <h2 class="text-2xl font-bold mb-6">{{ realisation?.titre }}</h2>
 
-<section>
-    <h3>Introduction</h3>
-    <p>{{ realisation?.introduction }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.introduction">
+    <mat-card-title>Introduction</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.introduction"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Objectif</h3>
-    <p>{{ realisation?.objectif }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.objectif">
+    <mat-card-title>Objectif</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.objectif"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Contexte Humain</h3>
-    <p>{{ realisation?.cHumain }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.cHumain">
+    <mat-card-title>Contexte Humain</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.cHumain"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Contexte Technique</h3>
-    <p>{{ realisation?.cTechnique }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.cTechnique">
+    <mat-card-title>Contexte Technique</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.cTechnique"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Enjeux et Risques</h3>
-    <p>{{ realisation?.enjeu }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.enjeu">
+    <mat-card-title>Enjeux et Risques</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.enjeu"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Organisation</h3>
-    <p>{{ realisation?.organisation }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.organisation">
+    <mat-card-title>Organisation</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.organisation"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Réalisation</h3>
-    <p>{{ realisation?.realisation }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.realisation">
+    <mat-card-title>Réalisation</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.realisation"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Fin du projet</h3>
-    <p>{{ realisation?.fin }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.fin">
+    <mat-card-title>Fin du projet</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.fin"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section>
-    <h3>Ce que je retiens</h3>
-    <p>{{ realisation?.retiens }}</p>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation?.retiens">
+    <mat-card-title>Ce que je retiens</mat-card-title>
+    <mat-card-content>
+      <p [innerHTML]="realisation?.retiens"></p>
+    </mat-card-content>
+  </mat-card>
 
-<section *ngIf="realisation && realisation?.liensVersCompetences?.length">
-  <h3>Compétences associées</h3>
-  <div class="liens">
-    <a *ngFor="let id of realisation.liensVersCompetences" [routerLink]="['/competence', id]">
-      {{ id | titlecase }}
-    </a>
-  </div>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation && realisation?.liensVersCompetences?.length">
+    <mat-card-title>Compétences associées</mat-card-title>
+    <mat-card-content>
+      <div class="liens">
+        <a *ngFor="let id of realisation.liensVersCompetences" [routerLink]="['/competence', id]" class="btn-liens">
+          Voir {{ id | titlecase }}
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
 
-<section *ngIf="realisation && realisation?.liensVersRealisations?.length">
-  <h3>Réalisations associées</h3>
-  <div class="liens">
-    <a *ngFor="let id of realisation.liensVersRealisations" [routerLink]="['/realisation', id]">
-      {{ id | titlecase }}
-    </a>
-  </div>
-</section>
+  <mat-card class="mb-4" *ngIf="realisation && realisation?.liensVersRealisations?.length">
+    <mat-card-title>Réalisations associées</mat-card-title>
+    <mat-card-content>
+      <div class="liens">
+        <a *ngFor="let id of realisation.liensVersRealisations" [routerLink]="['/realisation', id]" class="btn-liens">
+          Voir {{ id | titlecase }}
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

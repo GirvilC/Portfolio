@@ -1,37 +1,62 @@
 <div class="container">
-    <h1>{{competence.titre}}</h1>
-
-    <section>
-        <h2>Définition</h2>
-        <p>{{competence.definition}}</p>
-    </section>
-
-    <section>
-        <h2>Élément de preuve</h2>
-        <p>{{competence.elementDePreuve}}</p>
-    </section>
-
-    <section>
-        <h2>Autocritique</h2>
-        <p>{{competence.autocritique}}</p>
-    </section>
-
-    <section>
-        <h2>Futur évolution</h2>
-        <p>{{competence.evolution}}</p>
-    </section>
-
-    <section *ngIf="competence.liensVersRealisations.length">
-        <h3>Réalisation liées</h3>
+    <h1>{{ competence.titre }}</h1>
+  
+    <mat-card class="custom-card">
+      <mat-card-title>Définition</mat-card-title>
+      <mat-card-content>
+        <p [innerHTML]="competence.definition"></p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="custom-card">
+      <mat-card-title>Élément de preuve</mat-card-title>
+      <mat-card-content>
+        <p [innerHTML]="competence.elementDePreuve"></p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="custom-card">
+      <mat-card-title>Autocritique</mat-card-title>
+      <mat-card-content>
+        <p [innerHTML]="competence.autocritique"></p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="custom-card">
+      <mat-card-title>Futur évolution</mat-card-title>
+      <mat-card-content>
+        <p [innerHTML]="competence.evolution"></p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="custom-card" *ngIf="competence.liensVersRealisations.length">
+      <mat-card-title>Réalisations liées</mat-card-title>
+      <mat-card-content>
         <div class="liens">
-            <a *ngFor="let id of competence.liensVersRealisations" [routerLink]="['/realisation', id]" class="btn-liens">Voir {{ id | titlecase }}</a>
+          <a
+            *ngFor="let id of competence.liensVersRealisations"
+            [routerLink]="['/realisation', id]"
+            class="btn-liens"
+          >
+            Voir {{ id | titlecase }}
+          </a>
         </div>
-    </section>
-
-    <section *ngIf="competence.liensVersCompetences.length">
-        <h3>Compétences liées</h3>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="custom-card" *ngIf="competence.liensVersCompetences.length">
+      <mat-card-title>Compétences liées</mat-card-title>
+      <mat-card-content>
         <div class="liens">
-            <a *ngFor="let id of competence.liensVersCompetences" [routerLink]="['/competence', id]" class="btn-liens">Voir {{ getTitreCompetence(id) }}</a>
+          <a
+            *ngFor="let id of competence.liensVersCompetences"
+            [routerLink]="['/competence', id]"
+            class="btn-liens"
+          >
+            Voir {{ getTitreCompetence(id) }}
+          </a>
         </div>
-    </section>
-</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

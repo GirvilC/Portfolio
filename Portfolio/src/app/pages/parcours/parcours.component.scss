@@ -1,0 +1,60 @@
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid #6200ea;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    background-color: #6200ea;
+    border-radius: 50%;
+  }
+  
+  .timeline-content {
+    background-color: #fafafa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+    margin-right: 1rem;
+    object-fit: contain;
+  }
+  
+  .title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .structure {
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .timeline-date {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .description {
+    margin-top: 0.5rem;
+  }
+  

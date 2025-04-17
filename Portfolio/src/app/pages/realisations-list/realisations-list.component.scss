@@ -1,0 +1,31 @@
+.realisation-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+  
+.realisation-card {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+  
+.realisation-image {
+    width: 22%;
+    height: 22%;
+    // object-fit: cover;
+    // border-radius: 8px;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+  
+.realisation-info {
+    padding: 1rem;
+    flex: 1;
+}

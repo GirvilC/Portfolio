@@ -1,0 +1,15 @@
+<div class="competence-grid">
+    <div *ngFor="let comp of competences" class="competence-card">
+        <mat-icon class="competence-icon">{{ comp.icon }}</mat-icon>
+  
+        <button mat-raised-button color="primary" [routerLink]="['/competence', comp.id]">
+            {{ comp.titre }}
+        </button>
+  
+        <div class="stars">
+            <mat-icon *ngFor="let i of [1, 2, 3, 4, 5]">
+                {{ i <= comp.niveau ? 'star' : 'star_border' }}
+            </mat-icon>
+        </div>
+    </div>
+</div>
