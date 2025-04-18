@@ -5,7 +5,7 @@
         </div>
         <div class="realisation-info">
             <h3>{{ r.titre }}</h3>
-            <p>{{ r.objectif | slice:0:100 }}...</p>
+            <p [innerHTML]="r.introduction | safeSliceHtml:200"></p>
             <button mat-raised-button color="primary" [routerLink]="['/realisation', r.id]">
                 Voir la réalisation
             </button>

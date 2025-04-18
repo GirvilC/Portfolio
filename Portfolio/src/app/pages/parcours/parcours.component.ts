@@ -27,7 +27,11 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 })
 export class ParcoursComponent {
 
-  isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  isBrowser: boolean;
+
+  constructor(){
+    this.isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  }
 
   parcours: ParcoursItem[] = [
     {

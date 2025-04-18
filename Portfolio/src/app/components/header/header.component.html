@@ -7,7 +7,8 @@
   
     <button mat-button [matMenuTriggerFor]="menuCompetence">Compétences</button>
     <mat-menu #menuCompetence="matMenu">
-        <div style="padding: 8px 16px; font-weight: bold; font-size: 0.9rem;">
+        <button mat-menu-item routerLink="/competences">Mes compétences</button>
+        <div style="padding: 8px 16px; font-size: 0.9rem; color: #ffffff;">
             Compétences techniques
         </div>
         <button mat-menu-item [routerLink]="['/competence', 'angular']">Angular</button>
@@ -17,7 +18,7 @@
         <button mat-menu-item [routerLink]="['/competence', 'python']">Python</button>
         <button mat-menu-item [routerLink]="['/competence', 'sql']">SQL</button>
         <mat-divider></mat-divider>
-        <div style="padding: 8px 16px; font-weight: bold; font-size: 0.9rem;">
+        <div style="padding: 8px 16px; font-size: 0.9rem; color: white;">
             Compétences humaines
         </div>
         <button mat-menu-item [routerLink]="['/competence', 'adaptation']">Adaptation besoin client</button>
@@ -28,6 +29,7 @@
   
     <button mat-button [matMenuTriggerFor]="menu3">Réalisations</button>
     <mat-menu #menu3="matMenu">
+        <button mat-menu-item routerLink="/realisations">Mes réalisations</button>
       <button mat-menu-item [routerLink]="['/realisation', 'archweb']">ArchWeb</button>
       <button mat-menu-item [routerLink]="['/realisation', 'ads']">CDS ADS</button>
       <button mat-menu-item [routerLink]="['/realisation', 'amt']">CDS AMT</button>

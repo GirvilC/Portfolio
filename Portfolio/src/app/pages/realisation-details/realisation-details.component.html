@@ -69,7 +69,7 @@
     <mat-card-content>
       <div class="liens">
         <a *ngFor="let id of realisation.liensVersCompetences" [routerLink]="['/competence', id]" class="btn-liens">
-          Voir {{ id | titlecase }}
+          Voir {{ getTitreCompetence(id) }}
         </a>
       </div>
     </mat-card-content>
