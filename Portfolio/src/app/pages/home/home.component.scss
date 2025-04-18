@@ -40,3 +40,37 @@
     margin-right: 8px;
   }
   
+  @media screen and (max-width: 1024px) {
+    .home-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .left-side, .right-side {
+      width: 100%;
+      flex: unset;
+    }
+  
+    .photo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px auto;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .button-group button {
+      width: 100%;
+    }
+  }
+  
