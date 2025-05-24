@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the code
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -21,7 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Angular app
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Build
         run: ng build --base-href=/Portfolio/
 
       - name: Deploy to GitHub Pages
