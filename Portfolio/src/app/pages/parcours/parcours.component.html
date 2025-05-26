@@ -1,7 +1,7 @@
 <h2 class="text-3xl font-bold mb-6">Mon parcours</h2>
 
 <div class="timeline-container" *ngIf="isBrowser" [@fadeInStagger]>
-  <div class="timeline-item" *ngFor="let item of parcours">
+  <div class="timeline-item" *ngFor="let item of parcours" (click)="openDetails(item)">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <div class="timeline-header">

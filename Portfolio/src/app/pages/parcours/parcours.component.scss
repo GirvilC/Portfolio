@@ -8,6 +8,10 @@
     position: relative;
     margin-bottom: 2rem;
   }
+
+  .timeline-item:hover{
+    cursor: pointer;
+  }
   
   .timeline-dot {
     position: absolute;

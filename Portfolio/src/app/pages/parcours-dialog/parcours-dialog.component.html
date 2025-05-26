@@ -1,0 +1,49 @@
+<mat-dialog-content>
+    <div *ngIf="data.type === 'pro'">
+        <h2 class="mat-title">{{ data.titre }}</h2>
+        <h3 class="mat-subheading-1">{{ data.structure }}</h3>
+
+        <mat-divider class="my-4"></mat-divider>
+
+        <p><strong>Date :</strong> {{ data.date }}</p>
+        <p><strong>Lieu :</strong> {{ data.lieu }}</p>
+        <p><strong>Responsabilité :</strong> {{ data.responsabilite }}</p>
+        <p><strong>Statut :</strong> {{ data.statut }}</p>
+
+        <h3>Missions :</h3>
+        <ul>
+            <li *ngFor="let mission of data.missions">{{ mission }}</li>
+        </ul>
+
+        <h3>Technologies utilisées :</h3>
+        <div class="liens" (click)="onCloseDialog()">
+          <a
+            *ngFor="let id of data.technos"
+            [routerLink]="['/competence', id]"
+            class="btn-liens"
+          >
+            {{ getTitreCompetence(id) }}
+          </a>
+        </div>
+
+        <h3>Projets en lien :</h3>
+        <div class="liens" (click)="onCloseDialog()">
+          <a
+            *ngFor="let id of data.projets"
+            [routerLink]="['/realisation', id]"
+            class="btn-liens"
+          >
+            {{ id | titlecase }}
+          </a>
+        </div>
+    </div>
+
+    <div *ngIf="data.type === 'ecole'">
+        <h2 class="mat-title">{{ data.titre }}</h2>
+        <h3 class="mat-subheading-1">{{ data.structure }}</h3>
+        <p>{{ data.date }}</p>
+        <p><strong>Lieu :</strong> {{ data.lieu }}</p>
+        <p><strong>Diplôme :</strong> {{ data.titre }}</p>
+        <p> {{ data.description }} </p>
+    </div>
+</mat-dialog-content>
